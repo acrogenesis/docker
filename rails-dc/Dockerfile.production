@@ -1,0 +1,7 @@
+FROM ruby:2.2-onbuild
+
+RUN rake assets:precompile
+
+ENV RAILS_ENV production
+
+CMD ["rails", "server", "-b", "0.0.0.0"]
